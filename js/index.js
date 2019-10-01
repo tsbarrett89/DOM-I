@@ -45,8 +45,7 @@ let navBar = document.querySelectorAll('a');
 navBar.forEach((link, position) => {link.textContent = siteContent["nav"]["nav-item-" + (position + 1)]});
 
 let headerOne = document.querySelector('h1');
-headerOne.textContent = siteContent.cta.h1;
-// headerOne.textContent = "Dom" + <br> + "Is" + <br> + "Awesome";
+headerOne.innerHTML = `${siteContent["cta"]["h1"].slice(0, 3)}<br> ${siteContent["cta"]["h1"].slice(4, 6)}<br> ${siteContent["cta"]["h1"].slice(7, 15)}`;
 
 let buttonText = document.querySelector('button');
 buttonText.textContent = siteContent.cta.button;
@@ -56,9 +55,6 @@ ctaImage.setAttribute('src', siteContent["cta"]["img-src"]);
 
 let middleImg = document.getElementById('middle-img');
 middleImg.setAttribute('src', siteContent["main-content"]["middle-img-src"]);
-
-// let topContent = document.querySelectorAll('p');
-// topContent.forEach((paragraph) => {paragraph.textContent = siteContent["main-content"]["features-content"]});
 
 let featuresTitle = document.querySelector('.top-content .text-content:first-Child h4');
 featuresTitle.textContent = siteContent["main-content"]["features-h4"];
@@ -92,9 +88,6 @@ visionText.textContent = siteContent["main-content"]["vision-content"];
 
 let contactHeader = document.querySelector('.contact h4');
 contactHeader.textContent = siteContent["contact"]["contact-h4"];
-
-// let contactAddress = document.querySelector('.contact p');
-// contactAddress.textContent = siteContent["contact"]["address"];
 
 let contactInfo = document.querySelectorAll('.contact p');
 contactInfo[0].textContent = siteContent["contact"]["address"];
