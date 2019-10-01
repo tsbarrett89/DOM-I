@@ -3,7 +3,7 @@ const siteContent = {
     "nav-item-1": "Services",
     "nav-item-2": "Product",
     "nav-item-3": "Vision",
-    "nav-item4-": "Features",
+    "nav-item-4": "Features",
     "nav-item-5": "About",
     "nav-item-6": "Contact",
     "img-src": "img/logo.png"
@@ -41,8 +41,20 @@ const siteContent = {
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
+let firstNewLink = document.createElement('a');
+let secondNewLink = document.createElement('a');
+let navigationBar = document.querySelector('header nav');
+navigationBar.prepend(firstNewLink);
+navigationBar.appendChild(secondNewLink);
+siteContent["nav"]["nav-item-0"] = 'done';
+siteContent["nav"]["nav-item-7"] = 'right';
+
 let navBar = document.querySelectorAll('a');
-navBar.forEach((link, position) => {link.textContent = siteContent["nav"]["nav-item-" + (position + 1)]});
+navBar.forEach((link, position) => {link.textContent = siteContent["nav"]["nav-item-" + position]});
+navBar.forEach((link) => link.style.color = 'green');
+
+
+
 
 let headerOne = document.querySelector('h1');
 headerOne.innerHTML = `${siteContent["cta"]["h1"].slice(0, 3)}<br> ${siteContent["cta"]["h1"].slice(4, 6)}<br> ${siteContent["cta"]["h1"].slice(7, 15)}`;
